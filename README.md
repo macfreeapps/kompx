@@ -14,6 +14,14 @@ Requires **macOS 14 or later**. The download supports **Apple Silicon and Intel*
 
 ## Install
 
+With [Homebrew](https://brew.sh):
+
+```sh
+brew install --cask macfreeapps/tap/kompx
+```
+
+Or install manually:
+
 Download the DMG from [Releases](https://github.com/macfreeapps/kompx/releases/latest), open it, and drag **komPX** into **Applications**.
 
 The current release is ad-hoc signed and is not notarized by Apple. On first launch, macOS may require approval in **System Settings → Privacy & Security → Open Anyway**.

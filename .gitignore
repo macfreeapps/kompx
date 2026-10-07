@@ -1,0 +1,11 @@
+.DS_Store
+.agents/
+Releases/
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+/test
+/test2
+/test.swift
+/test2.swift

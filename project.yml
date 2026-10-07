@@ -1,0 +1,30 @@
+name: komPX
+options:
+  bundleIdPrefix: com.kompx
+  deploymentTarget:
+    macOS: "14.0"
+
+targets:
+  komPX:
+    type: application
+    platform: macOS
+    sources: [Sources]
+    info:
+      path: Info.plist
+      properties:
+        CFBundleName: komPX
+        CFBundleDisplayName: komPX
+        CFBundleIdentifier: com.kompx.komPX
+        CFBundleShortVersionString: "5.1.2"
+        CFBundleVersion: "31"
+        NSAppleEventsUsageDescription: "komPX needs permission to ask Finder to empty the Trash when you choose Empty Trash."
+        LSMinimumSystemVersion: "14.0"
+        NSHighResolutionCapable: true
+        LSApplicationCategoryType: public.app-category.video
+    settings:
+      base:
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_ENTITLEMENTS: komPX.entitlements
+        DEVELOPMENT_TEAM: "" # Set this in Xcode if needed
+        ENABLE_HARDENED_RUNTIME: YES

@@ -151,6 +151,10 @@ struct SettingsView: View {
 
                 LabeledContent("Version", value: appVersion)
                 LabeledContent("Build", value: buildVersion)
+                Link(destination: URL(string: "https://buy-me-a-banhmi.vercel.app/#donate")!) {
+                    Label("Buy me a bánh mì", systemImage: "heart.fill")
+                }
+                .help("Support the development of komPX")
                 Text("Made by @tarudesu")
                     .font(.caption)
                     .foregroundStyle(.secondary)

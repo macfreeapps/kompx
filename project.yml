@@ -15,8 +15,8 @@ targets:
         CFBundleName: komPX
         CFBundleDisplayName: komPX
         CFBundleIdentifier: com.kompx.komPX
-        CFBundleShortVersionString: "5.1.2"
-        CFBundleVersion: "31"
+        CFBundleShortVersionString: "5.1.3"
+        CFBundleVersion: "32"
         NSAppleEventsUsageDescription: "komPX needs permission to ask Finder to empty the Trash when you choose Empty Trash."
         LSMinimumSystemVersion: "14.0"
         NSHighResolutionCapable: true

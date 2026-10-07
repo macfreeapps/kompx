@@ -54,4 +54,8 @@ The optional runtime smoke test creates temporary media fixtures and requires Xc
 scripts/smoke-test.sh
 ```
 
+## Support
+
+If komPX is useful to you, [buy me a bánh mì](https://buy-me-a-banhmi.vercel.app/#donate). Thank you for supporting its development.
+
 Made by [@tarudesu](https://github.com/tarudesu).

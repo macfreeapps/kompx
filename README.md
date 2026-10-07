@@ -1,46 +1,57 @@
 # komPX
 
-A lightweight macOS app for compressing images and videos locally.
+Compress images and videos locally on your Mac. Drop media into one queue, choose a quality preset, and keep control of where the results go.
 
-![komPX app interface showing the media queue and drag-and-drop area](docs/images/kompx-ui.jpg)
+![komPX showing its drag-and-drop queue](docs/images/kompx-ui.jpg)
 
-- Drag files or folders into one queue.
-- Choose High, Balanced, or Smallest quality.
-- Compress JPG, PNG, HEIC, and TIFF images; MP4, MOV, and M4V videos.
-- Save smaller, verified results in place or keep originals with separate copies.
-- Pause, resume, and restore unfinished work.
+## Features
 
-Requires **macOS 14 or later**. The download supports **Apple Silicon and Intel**.
+- Process images and videos together in one queue, with progress and per-file results.
+- Choose **High**, **Balanced**, or **Smallest** quality, from up to 4K through 1080p to 720p.
+- Pause, resume, or safely cancel a batch. komPX can offer to restore unfinished work when you reopen it.
+- Review verified, smaller output before it is saved. If compression does not reduce a file's size, komPX keeps the original.
+- Choose between replacing originals, keeping a separate `_compressed` copy, or saving to a custom folder.
+- Process media on your Mac; your files are not uploaded to a service.
+
+**Images:** JPG, JPEG, HEIC, HEIF, PNG, and TIFF. **Video:** MP4, MOV, and M4V. Multi-page images and videos with extra audio or video tracks are skipped to preserve their contents.
+
+Requires **macOS 14 or later**. The app runs natively on **Apple Silicon and Intel**.
 
 ## Install
 
-With [Homebrew](https://brew.sh):
+### Homebrew
 
 ```sh
 brew install --cask macfreeapps/tap/kompx
 ```
 
-Or install manually:
+### Download
 
-Download the DMG from [Releases](https://github.com/macfreeapps/kompx/releases/latest), open it, and drag **komPX** into **Applications**.
+Download the latest [universal DMG](https://github.com/macfreeapps/kompx/releases/latest), open it, and drag **komPX** into **Applications**.
 
-The current release is ad-hoc signed and is not notarized by Apple. On first launch, macOS may require approval in **System Settings → Privacy & Security → Open Anyway**.
+komPX is ad-hoc signed and is not notarized by Apple. On first launch, macOS may ask you to approve it in **System Settings → Privacy & Security → Open Anyway**.
 
 ## Use
 
-Add media, choose your settings, and click **Compress**. In same-folder mode without `_compressed`, a verified smaller result replaces the source and the original moves to Trash. Enable **Add _compressed suffix** to keep originals, or choose a custom output folder.
+Add files by dropping them onto the queue or choosing them in Finder. Dropping a folder adds the supported media files it contains. Choose a preset, then select **Compress**.
 
-PNG/TIFF images are converted to HEIC when available. Multi-page images and videos with extra tracks are left untouched and reported as unsupported.
+By default, a smaller result replaces the original, and the original moves to Trash. To keep your original, turn on **Add _compressed suffix** or select a custom output folder. If the result is not smaller, the original stays in place.
 
-## Build
+For images, the default output is HEIC. JPG/JPEG can also keep their original format. PNG/TIFF conversion uses HEIC when available.
 
-Open `komPX.xcodeproj` in Xcode, or run:
+## Build from source
+
+Open `komPX.xcodeproj` in Xcode, or build a universal app from Terminal:
 
 ```sh
 xcodebuild -project komPX.xcodeproj -scheme komPX -configuration Release \
   -derivedDataPath build ARCHS='arm64 x86_64' ONLY_ACTIVE_ARCH=NO CODE_SIGNING_ALLOWED=NO build
 ```
 
-Run `scripts/smoke-test.sh` to check compression with generated fixtures (requires Xcode and FFmpeg).
+The optional runtime smoke test creates temporary media fixtures and requires Xcode and FFmpeg:
+
+```sh
+scripts/smoke-test.sh
+```
 
 Made by [@tarudesu](https://github.com/tarudesu).

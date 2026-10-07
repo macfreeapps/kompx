@@ -2,7 +2,7 @@
 
 A lightweight macOS app for compressing images and videos locally.
 
-![komPX app interface showing the media queue and drag-and-drop area](docs/images/kompx-ui.png)
+![komPX app interface showing the media queue and drag-and-drop area](docs/images/kompx-ui.jpg)
 
 - Drag files or folders into one queue.
 - Choose High, Balanced, or Smallest quality.
